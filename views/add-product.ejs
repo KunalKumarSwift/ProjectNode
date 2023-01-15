@@ -1,0 +1,20 @@
+<%- include('includes/head.ejs') %>
+  </head>
+  <body
+    class="font-latoLightItalic antialiased bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400"
+  >
+  <%- include('includes/navigation.ejs') %>
+    <form action="/add-product" method="POST" class="p-8 flex justify-center align-bottom">
+      <input
+        type="text"
+        name="title"
+        class="valid:border-green-500 font-latoBlackItalic h-12 mx-4"
+      />
+      <button
+        type="submit"
+        class="focus:outline-none mx-4 h-12 text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-latoBoldItalic rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
+      >
+        Add Product
+      </button>
+    </form>
+<%- include('includes/head.ejs') %>

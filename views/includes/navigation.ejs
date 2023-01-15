@@ -1,0 +1,34 @@
+<div
+  class="flex p-6 justify-between bg-stone-800 md:gap-x-8 font-latoItalic w-screen"
+>
+  <a
+    class="align-middle justify-center text-lg p-2 rounded-lg hover:text-white hover:border-sky-600 bg-sky-700"
+    href="/"
+  >
+    Home
+  </a>
+  <a
+    class="text-lg border-sky-300 p-2 rounded-lg hover:text-white hover:border-sky-600 bg-sky-700 <%= path === '/' ? 'active' : ''%> active:text-white"
+    href="/"
+  >
+    Shop
+  </a>
+  <a
+    class="text-lg border-sky-300 p-2 rounded-lg hover:text-white hover:border-sky-600 bg-sky-700 <%= path === '/add-product' ? 'active' : ''%>"
+    href="/add-product"
+  >
+    Add Products
+  </a>
+  <a
+    class="text-lg border-sky-300 p-2 rounded-lg hover:text-white hover:border-sky-600 bg-sky-700"
+    href="/add-product"
+  >
+    About us
+  </a>
+  <a
+    class="text-lg border-sky-300 p-2 rounded-lg hover:text-white hover:border-sky-600 bg-sky-700"
+    href="/add-product"
+  >
+    Sign Out
+  </a>
+</div>
