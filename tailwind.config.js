@@ -25,7 +25,6 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        // lato: ["Lato", "sans-serif"],
         latoBlack: ["LatoBlack"],
         latoBlackItalic: ["LatoBlackItalic"],
         latoBold: ["LatoBold"],
@@ -36,8 +35,6 @@ module.exports = {
         latoRegular: ["LatoRegular"],
         latoThin: ["LatoThin"],
         latoThinItalic: ["LatoThinItalic"],
-        // fontFamily: {
-        // },
       },
     },
   },
