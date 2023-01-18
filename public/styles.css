@@ -513,6 +513,22 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
+.nav-menu-item {
+  border-radius: 0.5rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(3 105 161 / var(--tw-bg-opacity));
+  padding: 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.nav-menu-item:hover {
+  --tw-border-opacity: 1;
+  border-color: rgb(2 132 199 / var(--tw-border-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
 .static {
   position: static;
 }
@@ -560,6 +576,10 @@ video {
 
 .max-w-xl {
   max-width: 36rem;
+}
+
+.cursor-s-resize {
+  cursor: s-resize;
 }
 
 .grid-cols-1 {

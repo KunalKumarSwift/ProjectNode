@@ -1,6 +1,13 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+
+@layer components {
+  .nav-menu-item {
+    @apply text-sm p-2 rounded-lg hover:text-white hover:border-sky-600 bg-sky-700;
+  }
+}
+
 @font-face {
   font-family: "LatoBlack";
   src: url("../fonts/Lato/Lato-Black.ttf");
