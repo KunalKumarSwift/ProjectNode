@@ -12,7 +12,28 @@
   }
 
   .bodyBackground {
-    @apply font-latoLightItalic items-center antialiased bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400 content-center;
+    /* from-pink-300 via-purple-300 to-indigo-400 content-center; */
+    @apply font-latoLightItalic items-center antialiased bg-gradient-to-r bg-sky-900;
+  }
+
+  .form-row {
+    @apply justify-between items-center flex p-4 bg-sky-800 rounded-lg shadow-2xl;
+  }
+
+  .form-label {
+    @apply font-latoItalic text-sky-300;
+  }
+
+  .form-input {
+    @apply bg-sky-800 border-sky-500 border-solid border-b-2 p-2 text-sky-300 h-12 mx-4;
+  }
+
+  .form-btn-primary {
+    @apply justify-center items-center flex p-6 hover:bg-sky-500 bg-sky-600 rounded-lg shadow-2xl text-sky-900 font-latoItalic;
+  }
+
+  .form-btn-secondary {
+    @apply justify-center items-center flex p-6 hover:bg-sky-800 bg-sky-900 rounded-lg shadow-2xl text-sky-500 border-2 border-sky-500 font-latoItalic;
   }
 }
 

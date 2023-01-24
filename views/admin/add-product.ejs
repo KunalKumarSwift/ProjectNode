@@ -1,20 +1,56 @@
 <%- include('../includes/head.ejs') %>
   </head>
   <body
-    class="font-latoLightItalic antialiased bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400"
+    class="bodyBackground"
   >
   <%- include('../includes/navigation.ejs') %>
     <form action="/admin/add-product" method="POST" class="p-8 flex justify-center align-bottom">
-      <input
-        type="text"
-        name="title"
-        class="valid:border-green-500 font-latoBlackItalic h-12 mx-4"
-      />
-      <button
-        type="submit"
-        class="focus:outline-none mx-4 h-12 text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-latoBoldItalic rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
-      >
-        Add Product
-      </button>
+      <div class="grid grid-cols-1 gap-8 p-8 rounded-lg">
+        <div class="form-row">
+          <label class="form-label" for="title">Title</label>
+          <input
+            type="text"
+            name="title"
+            class= "form-input"
+          />
+        </div>
+        <div class="form-row">
+          <label class="form-label" for="imageUrl">Image URL</label>
+          <input
+            type="text"
+            name="imageUrl"
+            class= "form-input"
+          />
+        </div>
+        <div class="form-row">
+          <label class="form-label" for="price">Price</label>
+          <input
+            type="number"
+            name="price"
+            class= "form-input"
+          />
+        </div>
+        <div class="form-row">
+          <label class="form-label" for="description">Description</label>
+          <textarea
+            name="description"
+            rows="5"
+            class= "form-input">
+          </textarea>
+        </div>
+
+        <button
+          type="submit"
+          class="form-btn-primary"
+          >
+          Add Product
+        </button>
+        <button
+          type="cancel"
+          class="form-btn-secondary"
+          >
+          Cancel
+        </button>
+      </div>
     </form>
-    <%- include('../includes/end.ejs') %>
+  <%- include('../includes/end.ejs') %>
