@@ -15,8 +15,8 @@ const resourceRoutes = require("./routes/404");
 
 app.use(bodyParser.urlencoded());
 app.use(express.static(path.join(__dirname, "public")));
-app.use(adminRoutes);
-
+// * app.use(adminRoutes);
+app.use("/admin", adminRoutes);
 // ? Install 'Better Comments' VS Code extension to see these comments beautifully
 
 // ! app.use('/admin, 'adminRoutes);

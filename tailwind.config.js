@@ -3,8 +3,10 @@ module.exports = {
   content: [
     "./*.{html,js}",
     "./*.ejs",
-    "./views/*.ejs",
-    "./views/includes/*.ejs",
+    "./views/**/*.ejs",
+    // "./views/includes/*.ejs",
+    // "./views/admin/*.ejs",
+    // "./views/shop/*.ejs",
   ],
   theme: {
     screens: {

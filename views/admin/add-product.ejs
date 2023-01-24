@@ -1,10 +1,10 @@
-<%- include('includes/head.ejs') %>
+<%- include('../includes/head.ejs') %>
   </head>
   <body
     class="font-latoLightItalic antialiased bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400"
   >
-  <%- include('includes/navigation.ejs') %>
-    <form action="/add-product" method="POST" class="p-8 flex justify-center align-bottom">
+  <%- include('../includes/navigation.ejs') %>
+    <form action="/admin/add-product" method="POST" class="p-8 flex justify-center align-bottom">
       <input
         type="text"
         name="title"
@@ -17,4 +17,4 @@
         Add Product
       </button>
     </form>
-    <%- include('includes/end.ejs') %>
+    <%- include('../includes/end.ejs') %>

@@ -4,7 +4,15 @@
 
 @layer components {
   .nav-menu-item {
-    @apply text-sm p-2 rounded-lg hover:text-white hover:border-sky-600 bg-sky-700;
+    @apply text-sm p-2 rounded-lg bg-sky-900 text-purple-300;
+  }
+
+  .nav-menu-item.active {
+    @apply text-white bg-sky-500;
+  }
+
+  .bodyBackground {
+    @apply font-latoLightItalic items-center antialiased bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400 content-center;
   }
 }
 

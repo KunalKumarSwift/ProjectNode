@@ -1,18 +1,27 @@
 <div
   class="flex p-6 justify-between bg-stone-800 md:gap-x-8 font-latoBold cursor-s-resize"
 >
-  <a class="nav-menu-item" href="/">Home</a>
-  <a
-    class="nav-menu-item <%= path === '/' ? 'active' : ''%> active:text-white"
-    href="/"
+  <a class="nav-menu-item <%= path === '/' ? 'active' : ''%>" href="/shop"
+    >Shop</a
   >
-    Shop
-  </a>
   <a
-    class="nav-menu-item <%= path === '/add-product' ? 'active' : ''%>"
-    href="/add-product"
-    >Add Products</a
+    class="nav-menu-item <%= path === 'shop/products' ? 'active' : ''%>"
+    href="/products"
+    >Products</a
   >
-  <a class="nav-menu-item" href="/add-product"> About us </a>
-  <a class="nav-menu-item" href="/add-product"> Sign Out </a>
+  <a
+    class="nav-menu-item <%= path === 'shop/cart' ? 'active' : ''%>"
+    href="/cart"
+    >Cart</a
+  >
+  <a
+    class="nav-menu-item <%= path === 'admin/add-product' ? 'active' : ''%>"
+    href="/admin/add-product"
+    >Add Product</a
+  >
+  <a
+    class="nav-menu-item <%= path === 'admin/products' ? 'active' : ''%>"
+    href="/admin/products"
+    >Admin Products</a
+  >
 </div>
