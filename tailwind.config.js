@@ -10,7 +10,7 @@ module.exports = {
   ],
   theme: {
     screens: {
-      sm: { min: "640px", max: "767px" },
+      sm: { min: "280px", max: "767px" },
       // => @media (min-width: 640px and max-width: 767px) { ... }
 
       md: { min: "768px", max: "1023px" },
@@ -44,5 +44,6 @@ module.exports = {
     require("postcss-import"),
     require("tailwindcss"),
     require("postcss-preset-env")({ stage: 1 }),
+    require("@tailwindcss/line-clamp"),
   ],
 };

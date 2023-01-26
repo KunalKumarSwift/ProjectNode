@@ -4,7 +4,7 @@
 
 @layer components {
   .nav-menu-item {
-    @apply text-sm p-2 rounded-lg bg-sky-900 text-purple-300;
+    @apply text-sm sm:text-xs sm:p-2 p-4 rounded-lg bg-sky-900 text-purple-300;
   }
 
   .nav-menu-item.active {
@@ -13,27 +13,39 @@
 
   .bodyBackground {
     /* from-pink-300 via-purple-300 to-indigo-400 content-center; */
-    @apply font-latoLightItalic items-center antialiased bg-gradient-to-r bg-sky-900;
+    @apply font-latoLightItalic items-center antialiased bg-slate-600;
+  }
+
+  .form-single-column-flex {
+    @apply flex flex-col gap-8 p-8 rounded-lg w-screen place-items-center;
+  }
+
+  .form-single-column-flex-row {
+    @apply w-2/5 sm:w-10/12 md:w-2/5 rounded-lg;
+  }
+
+  .form-elements-background {
+    @apply bg-gray-800 hover:bg-gray-700;
   }
 
   .form-row {
-    @apply justify-between items-center flex p-4 bg-sky-800 rounded-lg shadow-2xl;
+    @apply flex flex-col p-4 grow rounded-lg shadow-lg form-elements-background;
   }
 
   .form-label {
-    @apply font-latoItalic text-sky-300;
+    @apply font-latoItalic text-gray-400;
   }
 
   .form-input {
-    @apply bg-sky-800 border-sky-500 border-solid border-b-2 p-2 text-sky-300 h-12 mx-4;
+    @apply text-gray-300 border-solid border-b bg-transparent;
   }
 
   .form-btn-primary {
-    @apply justify-center items-center flex p-6 hover:bg-sky-500 bg-sky-600 rounded-lg shadow-2xl text-sky-900 font-latoItalic;
+    @apply justify-center grow p-4 hover:bg-sky-500 bg-sky-600 rounded-lg shadow-2xl text-sky-900 font-latoItalic;
   }
 
   .form-btn-secondary {
-    @apply justify-center items-center flex p-6 hover:bg-sky-800 bg-sky-900 rounded-lg shadow-2xl text-sky-500 border-2 border-sky-500 font-latoItalic;
+    @apply justify-center grow p-4 hover:bg-sky-800 bg-sky-900 rounded-lg shadow-2xl text-sky-500 border-2 border-sky-500 font-latoItalic;
   }
 }
 

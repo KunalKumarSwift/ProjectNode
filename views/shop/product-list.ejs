@@ -1,38 +1,34 @@
 <%- include('../includes/head.ejs') %>
   </head>
   <body class="bodyBackground">
-  <%- include('../includes/navigation.ejs') %>
+    <%- include('../includes/navigation.ejs') %>
 
-    <main>
-      <div class="flex justify-center">
-        <% if(prods.length > 0) {%>
-        <div class="grid grid-cols-1 gap-4 px-12 py-4">
-          <% for(let product of prods) { %>
-          <a
-            href="#"
-            class="flex flex-col max-w-xl bg-white border rounded-lg shadow-md md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
-          >
-            <img
-              class="object-cover w-full rounded-t-lg h-48 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"
-              src="/assets/images/product.jpeg"
-              alt=""
-            />
-            <div class="flex flex-col p-4">
-              <h5
-                class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
-              >
-                <%= product.title %>
-              </h5>
-              <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                <%= product.description %>
-              </p>
+      <main>
+        <div class="form-single-column-flex">
+          <% if(prods.length> 0) {%>
+            <div class="form-single-column-flex-row">
+              <% for(let product of prods) { %>
+                <div class="py-4">
+                  <a href="#"
+                    class="flex flex-col bg-white border rounded-lg shadow-md hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+                    <img
+                      class="object-cover rounded-t-lg h-32 md:h-auto sm:w-auto md:w-48 md:rounded-none md:rounded-l-lg"
+                      src="<%= product.imageUrl %>" alt="" />
+                    <div class="flex flex-col p-4">
+                      <h5 class="form-label decoration-4">
+                        <%= product.title %>
+                      </h5>
+                      <p class="form-label line-clamp-3">
+                        <%= product.description %>
+                      </p>
+                    </div>
+                  </a>
+                </div>
+                <% } } else { %>
+
+                  <h1 class=" form-label">No Products</h1>
+                  <% } %>
             </div>
-          </a>
-          <% } } else { %>
-
-          <h1 class="text-xl font-latoBold px-4">No Products</h1>
-          <% } %>
         </div>
-      </div>
-    </main>
-<%- include('../includes/end.ejs') %>
+      </main>
+      <%- include('../includes/end.ejs') %>
