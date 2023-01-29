@@ -2,7 +2,7 @@ const fs = require("fs");
 const path = require("path");
 const rootDir = require("../utils/path");
 const products = [];
-const filePath = path.join(rootDir, "data", "products.json");
+const filePath = path.join(rootDir, "..", "..", "data", "products.json");
 
 const getProductsFromFile = (cb) => {
   fs.readFile(filePath, (error, fileContent) => {
@@ -22,6 +22,7 @@ module.exports = class Product {
   }
 
   save() {
+    this.id = Math.random().toString();
     getProductsFromFile((products) => {
       products.push(this);
       // ! Must use an arrow function here, otherwise this will not refer to the class scope, instead it will refer to the function context.
@@ -33,5 +34,13 @@ module.exports = class Product {
 
   static fetchAll(cb) {
     getProductsFromFile(cb);
+  }
+
+  static fetchProductById(id, cb) {
+    getProductsFromFile((products) => {
+      const matchedProduct = products.find((p) => p.id === id);
+      console.log("matchedProduct :>> ", matchedProduct);
+      cb(matchedProduct);
+    });
   }
 };

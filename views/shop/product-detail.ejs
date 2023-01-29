@@ -2,5 +2,33 @@
     </head>
     <body class="bodyBackground">
         <%- include('../includes/navigation.ejs')%>
-            <h1>Product Detail</h1>
+            <main>
+                <div class="form-single-column-flex gap-0">
+                    <div class="form-single-column-flex-row">
+                        <div class="form-elements-background rounded-lg">
+                            <div class="form-row-with-column-attribute p-0 remove-shadow">
+                                <img class="form-card-image" src="<%= prods.imageUrl %>">
+                            </div>
+                            <div class="form-row-with-column-attribute remove-shadow ">
+                                <label class="form-label-description">Title</label>
+                                <label class="form-label" for="title">
+                                    <%= prods.title %>
+                                </label>
+                            </div>
+                            <div class="form-row-with-column-attribute remove-shadow">
+                                <label class="form-label-description">Description</label>
+                                <label class="form-label" for="title">
+                                    <%= prods.description %>
+                                </label>
+                            </div>
+                            <div class="form-row-with-column-attribute remove-shadow">
+                                <label class="form-label-description">Price</label>
+                                <label class="form-label" for="title">
+                                    $<%= prods.price %>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
             <%- include('../includes/end.ejs')%>

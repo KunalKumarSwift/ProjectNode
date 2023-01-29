@@ -1,6 +1,49 @@
-<%- include('../includes/head.ejs')%>
+<%- include('../includes/head.ejs') %>
     </head>
     <body class="bodyBackground">
-        <%- include('../includes/navigation.ejs')%>
-            <h1>Admin Products</h1>
-            <%- include('../includes/end.ejs')%>
+        <%- include('../includes/navigation.ejs') %>
+
+            <main>
+                <div class="form-single-column-flex">
+                    <% if(prods.length> 0) {%>
+                        <div class="form-single-column-flex-row">
+                            <% for(let product of prods) { %>
+                                <div class="py-4">
+                                    <div
+                                        class="flex flex-col bg-white border rounded-lg shadow-md hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+                                        <img class="object-cover rounded-t-lg h-32 md:h-auto sm:w-auto md:w-48 md:rounded-none md:rounded-l-lg"
+                                            src="<%= product.imageUrl %>" alt="" />
+                                        <div class="flex flex-col p-4">
+                                            <h5 class="form-label decoration-4">
+                                                <%= product.title %>
+                                            </h5>
+                                            <h5 class="form-label decoration-1">
+                                                <%= `$${product.price}` %>
+                                            </h5>
+                                            <p class="form-label line-clamp-3">
+                                                <%= product.description %>
+                                            </p>
+                                        </div>
+
+                                        <div class="form-group-container-items">
+                                            <form action="/admin/delete-product" method="post">
+                                                <button type="submit" class="form-action-btn-primary">
+                                                    Delete
+                                                </button>
+                                            </form>
+
+                                            <a href="/admin/edit-product" class="form-action-btn-secondary">
+                                                Edit
+                                            </a>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <% } } else { %>
+
+                                    <h1 class="form-label">No Products</h1>
+                                    <% } %>
+                        </div>
+                </div>
+            </main>
+            <%- include('../includes/end.ejs') %>

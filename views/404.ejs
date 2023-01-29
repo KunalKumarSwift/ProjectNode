@@ -1,12 +1,10 @@
 <%- include('includes/head.ejs') %>
-<link rel="stylesheet" href="/css/404.css" />
-</head>
-<body
-  class="font-latoLightItalic antialiased bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400"
->
-  <%- include('includes/navigation.ejs') %>
-  <div id="error-message" class="justify-center p-4">
-    <h1 class="text-2xl font-latoBold">404 Error</h1>
-    <p>Sorry, the page you are looking for cannot be found.</p>
-  </div>
-  <%- include('includes/end.ejs') %>
+  <link rel="stylesheet" href="/css/404.css" />
+  </head>
+  <body class="font-latoLightItalic antialiased bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400">
+    <%- include('includes/navigation.ejs') %>
+      <div id="error-message" class=" flex flex-col justify-center p-4 items-center">
+        <h1 class="text-5xl font-latoBold">404 Error</h1>
+        <p class="font-latoRegular text-4xl text-stone-700">Sorry, the page you are looking for cannot be found.</p>
+      </div>
+      <%- include('includes/end.ejs') %>

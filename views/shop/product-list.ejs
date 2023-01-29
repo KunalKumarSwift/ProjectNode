@@ -9,20 +9,29 @@
             <div class="form-single-column-flex-row">
               <% for(let product of prods) { %>
                 <div class="py-4">
-                  <a href="#"
+                  <div
                     class="flex flex-col bg-white border rounded-lg shadow-md hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
-                    <img
-                      class="object-cover rounded-t-lg h-32 md:h-auto sm:w-auto md:w-48 md:rounded-none md:rounded-l-lg"
-                      src="<%= product.imageUrl %>" alt="" />
+                    <img class="form-card-image" src="<%= product.imageUrl %>" alt="" />
                     <div class="flex flex-col p-4">
                       <h5 class="form-label decoration-4">
                         <%= product.title %>
+                      </h5>
+                      <h5 class="form-label decoration-1">
+                        <%= `$${product.price}` %>
                       </h5>
                       <p class="form-label line-clamp-3">
                         <%= product.description %>
                       </p>
                     </div>
-                  </a>
+                    <div class="form-group-container-items">
+                      <form action="/add-to-cart" method="post">
+                        <button type="submit" class="form-action-btn-primary">
+                          Add to Cart
+                        </button>
+                      </form>
+                      <a class="form-action-btn-secondary" href="/products/<%= product.id %>">Details</a>
+                    </div>
+                  </div>
                 </div>
                 <% } } else { %>
 

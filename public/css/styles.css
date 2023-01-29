@@ -21,19 +21,39 @@
   }
 
   .form-single-column-flex-row {
-    @apply w-2/5 sm:w-10/12 md:w-2/5 rounded-lg;
+    @apply w-3/5 sm:w-10/12 md:w-2/5 rounded-lg;
+  }
+
+  .form-group-container-items {
+    @apply flex flex-row-reverse p-2 gap-2;
   }
 
   .form-elements-background {
     @apply bg-gray-800 hover:bg-gray-700;
   }
 
+  .form-row-with-column-attribute {
+    @apply flex flex-col p-4 grow rounded-lg shadow-lg;
+  }
+
   .form-row {
-    @apply flex flex-col p-4 grow rounded-lg shadow-lg form-elements-background;
+    @apply form-row-with-column-attribute form-elements-background;
   }
 
   .form-label {
     @apply font-latoItalic text-gray-400;
+  }
+
+  .form-label-description {
+    @apply font-latoRegular text-xl text-gray-300;
+  }
+
+  .form-card-image {
+    @apply object-cover rounded-t-lg h-64 md:h-auto sm:w-auto md:rounded-none md:rounded-l-lg;
+  }
+
+  .remove-shadow {
+    @apply shadow-none;
   }
 
   .form-input {
@@ -45,7 +65,15 @@
   }
 
   .form-btn-secondary {
-    @apply justify-center grow p-4 hover:bg-sky-800 bg-sky-900 rounded-lg shadow-2xl text-sky-500 border-2 border-sky-500 font-latoItalic;
+    @apply justify-center grow p-4 hover:bg-sky-800 bg-sky-900 rounded-lg shadow-2xl text-sky-500  font-latoItalic border-2 border-sky-500;
+  }
+
+  .form-action-btn-primary {
+    @apply form-btn-primary font-latoBold flex-grow-0 p-2 text-xs h-8;
+  }
+
+  .form-action-btn-secondary {
+    @apply form-btn-secondary font-latoBold flex-grow-0 p-2 text-xs h-8;
   }
 }
 

@@ -9,12 +9,12 @@ app.set("view engine", "ejs");
 // ? This could be changed to something custom like templates or something fancy!! :)
 app.set("views", "views");
 
-const adminRoutes = require("./routes/admin");
-const shopRoutes = require("./routes/shop");
-const resourceRoutes = require("./routes/404");
+const adminRoutes = require("../../routes/admin");
+const shopRoutes = require("../../routes/shop");
+const resourceRoutes = require("../../routes/404");
 
 app.use(bodyParser.urlencoded());
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "..")));
 // * app.use(adminRoutes);
 app.use("/admin", adminRoutes);
 // ? Install 'Better Comments' VS Code extension to see these comments beautifully
