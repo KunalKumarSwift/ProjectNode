@@ -17,11 +17,11 @@
   }
 
   .form-single-column-flex {
-    @apply flex flex-col gap-8 p-8 rounded-lg w-screen place-items-center;
+    @apply flex flex-col gap-8 p-8 sm:p-2 rounded-lg w-screen place-items-center;
   }
 
   .form-single-column-flex-row {
-    @apply w-3/5 sm:w-10/12 md:w-2/5 rounded-lg;
+    @apply w-3/5 sm:w-11/12 md:w-2/5 rounded-lg;
   }
 
   .form-group-container-items {

@@ -38,6 +38,15 @@ exports.getCart = (req, res, next) => {
   });
 };
 
+exports.postCart = (req, res, next) => {
+  const productId = req.body.productId;
+  console.log("productId :>> ", productId);
+  res.render("shop/cart", {
+    docTitle: "Your Cart",
+    path: "shop/cart",
+  });
+};
+
 exports.getOrders = (req, res, next) => {
   res.render("shop/orders", {
     docTitle: "Your Orders",

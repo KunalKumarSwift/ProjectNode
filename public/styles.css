@@ -559,6 +559,12 @@ video {
   padding: 2rem;
 }
 
+@media (min-width: 280px) and (max-width: 767px) {
+  .form-single-column-flex {
+    padding: 0.5rem;
+  }
+}
+
 .form-single-column-flex-row {
   width: 60%;
   border-radius: 0.5rem;
@@ -566,7 +572,7 @@ video {
 
 @media (min-width: 280px) and (max-width: 767px) {
   .form-single-column-flex-row {
-    width: 83.333333%;
+    width: 91.666667%;
   }
 }
 
@@ -782,6 +788,10 @@ video {
 
 .flex {
   display: flex;
+}
+
+.hidden {
+  display: none;
 }
 
 .h-32 {

@@ -24,12 +24,9 @@
                       </p>
                     </div>
                     <div class="form-group-container-items">
-                      <form action="/add-to-cart" method="post">
-                        <button type="submit" class="form-action-btn-primary">
-                          Add to Cart
-                        </button>
-                      </form>
-                      <a class="form-action-btn-secondary" href="/products/<%= product.id %>">Details</a>
+                      <!-- Only needed to add the dict for product when we are sending some object in a loop to include code -->
+                      <%- include('../includes/addToCart.ejs', {prods: product})%>
+                        <a class="form-action-btn-secondary" href="/products/<%= product.id %>">Details</a>
                     </div>
                   </div>
                 </div>
