@@ -6,10 +6,43 @@
 
 const Product = require("../models/product");
 
+exports.getEditProduct = (req, res, next) => {
+  //? this is how we read query params
+  //? res.query.key
+  const isEditing = req.query.edit;
+  const productId = req.params.productId;
+  Product.fetchProductById(productId, (product) => {
+    res.render("admin/edit-product", {
+      docTitle: "Edit product",
+      path: "admin/edit-product",
+      editing: isEditing,
+      prods: product,
+    });
+  });
+};
+
+exports.postEditProduct = (req, res, next) => {
+  //? this is how we read query params
+  //? res.query.key
+  const isEditing = req.query.edit;
+  const productId = req.params.productId;
+  const product = new Product(
+    req.body.title,
+    req.body.imageUrl,
+    req.body.description,
+    req.body.price
+  );
+
+  Product.updateProductById(productId, product);
+
+  res.redirect("/");
+};
+
 exports.getAddProduct = (req, res, next) => {
-  res.render("admin/add-product", {
+  res.render("admin/edit-product", {
     docTitle: "Add product",
     path: "admin/add-product",
+    editing: false,
   });
 };
 

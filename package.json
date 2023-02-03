@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "concurrently --kill-others \"npm run build\" \"npm run watch\"",
-    "build": "nodemon ./public/js/index.js",
+    "build": "nodemon --config nodemon.json ./public/js/index.js",
     "watch": "tailwindcss -i ./public/css/styles.css -o ./public/styles.css --watch",
     "tailwind:css": "postcss ./public/css/styles.css -o ./public/styles.css"
   },
@@ -24,7 +24,6 @@
     "postcss-cli": "^10.1.0",
     "postcss-import": "^15.1.0",
     "postcss-preset-env": "^7.8.3",
-    "pug": "^3.0.2",
     "tailwindcss": "^3.2.4"
   }
 }

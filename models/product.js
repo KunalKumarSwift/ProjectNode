@@ -32,6 +32,19 @@ module.exports = class Product {
     });
   }
 
+  static updateProductById(id, product) {
+    getProductsFromFile((products) => {
+      const indexOfProduct = products.findIndex((p) => p.id === id);
+      product.id = id;
+      products[indexOfProduct] = product;
+
+      // ! Must use an arrow function here, otherwise this will not refer to the class scope, instead it will refer to the function context.
+      fs.writeFile(filePath, JSON.stringify(products), (err) => {
+        console.log("err :>> ", err);
+      });
+    });
+  }
+
   static fetchAll(cb) {
     getProductsFromFile(cb);
   }

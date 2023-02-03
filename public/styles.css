@@ -516,7 +516,7 @@ video {
 .nav-menu-item {
   border-radius: 0.5rem;
   --tw-bg-opacity: 1;
-  background-color: rgb(12 74 110 / var(--tw-bg-opacity));
+  background-color: rgb(7 89 133 / var(--tw-bg-opacity));
   padding: 1rem;
   font-size: 0.875rem;
   line-height: 1.25rem;
@@ -649,8 +649,8 @@ video {
   height: 16rem;
   border-top-left-radius: 0.5rem;
   border-top-right-radius: 0.5rem;
-  -o-object-fit: cover;
-     object-fit: cover;
+  -o-object-fit: scale-down;
+     object-fit: scale-down;
 }
 
 @media (min-width: 280px) and (max-width: 767px) {
@@ -710,7 +710,7 @@ video {
   --tw-border-opacity: 1;
   border-color: rgb(14 165 233 / var(--tw-border-opacity));
   --tw-bg-opacity: 1;
-  background-color: rgb(12 74 110 / var(--tw-bg-opacity));
+  background-color: rgb(7 89 133 / var(--tw-bg-opacity));
   padding: 1rem;
   font-family: LatoItalic;
   --tw-text-opacity: 1;
@@ -762,7 +762,7 @@ video {
   --tw-border-opacity: 1;
   border-color: rgb(14 165 233 / var(--tw-border-opacity));
   --tw-bg-opacity: 1;
-  background-color: rgb(12 74 110 / var(--tw-bg-opacity));
+  background-color: rgb(7 89 133 / var(--tw-bg-opacity));
   padding: 1rem;
   font-family: LatoItalic;
   --tw-text-opacity: 1;
@@ -786,16 +786,24 @@ video {
   line-height: 1rem;
 }
 
+.sticky {
+  position: sticky;
+}
+
+.top-0 {
+  top: 0px;
+}
+
+.z-50 {
+  z-index: 50;
+}
+
 .flex {
   display: flex;
 }
 
 .hidden {
   display: none;
-}
-
-.h-32 {
-  height: 8rem;
 }
 
 .w-screen {
@@ -843,11 +851,6 @@ video {
   border-radius: 0.5rem;
 }
 
-.rounded-t-lg {
-  border-top-left-radius: 0.5rem;
-  border-top-right-radius: 0.5rem;
-}
-
 .border {
   border-width: 1px;
 }
@@ -889,11 +892,6 @@ video {
 
 .to-indigo-400 {
   --tw-gradient-to: #818cf8;
-}
-
-.object-cover {
-  -o-object-fit: cover;
-     object-fit: cover;
 }
 
 .p-10 {
@@ -1088,10 +1086,6 @@ video {
 }
 
 @media (min-width: 280px) and (max-width: 767px) {
-  .sm\:w-auto {
-    width: auto;
-  }
-
   .sm\:flex-wrap {
     flex-wrap: wrap;
   }
@@ -1107,26 +1101,9 @@ video {
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
-  .md\:h-auto {
-    height: auto;
-  }
-
-  .md\:w-48 {
-    width: 12rem;
-  }
-
   .md\:gap-x-8 {
     -moz-column-gap: 2rem;
          column-gap: 2rem;
-  }
-
-  .md\:rounded-none {
-    border-radius: 0px;
-  }
-
-  .md\:rounded-l-lg {
-    border-top-left-radius: 0.5rem;
-    border-bottom-left-radius: 0.5rem;
   }
 
   .md\:text-lg {

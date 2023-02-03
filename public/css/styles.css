@@ -4,7 +4,7 @@
 
 @layer components {
   .nav-menu-item {
-    @apply text-sm sm:text-xs sm:p-2 p-4 rounded-lg bg-sky-900 text-purple-300;
+    @apply text-sm sm:text-xs sm:p-2 p-4 rounded-lg bg-sky-800 text-purple-300;
   }
 
   .nav-menu-item.active {
@@ -49,7 +49,7 @@
   }
 
   .form-card-image {
-    @apply object-cover rounded-t-lg h-64 md:h-auto sm:w-auto md:rounded-none md:rounded-l-lg;
+    @apply object-scale-down rounded-t-lg h-64 md:h-auto sm:w-auto md:rounded-none md:rounded-l-lg;
   }
 
   .remove-shadow {
@@ -65,7 +65,7 @@
   }
 
   .form-btn-secondary {
-    @apply justify-center grow p-4 hover:bg-sky-800 bg-sky-900 rounded-lg shadow-2xl text-sky-500  font-latoItalic border-2 border-sky-500;
+    @apply justify-center grow p-4 hover:bg-sky-800 bg-sky-800 rounded-lg shadow-2xl text-sky-500  font-latoItalic border-2 border-sky-500;
   }
 
   .form-action-btn-primary {

@@ -1,0 +1,58 @@
+<%- include('../includes/head.ejs') %>
+    </head>
+    <body class="bodyBackground">
+        <%- include('../includes/navigation.ejs') %>
+            <form action="/admin/<%= editing ? `edit-product/${prods.id}` : `add-product` %>" method="POST"
+                class="flex">
+                <div class="form-single-column-flex">
+
+                    <div class="form-single-column-flex-row">
+                        <div class="form-row">
+                            <label class="form-label" for="title">Title</label>
+                            <input type="text" name="title" class="form-input"
+                                value="<%= editing ? prods.title : ""  %> " />
+                        </div>
+                    </div>
+
+                    <div class="form-single-column-flex-row">
+                        <div class="form-row">
+                            <label class="form-label" for="imageUrl">Image URL</label>
+                            <input type="text" name="imageUrl" class="form-input"
+                                value="<%= editing ? prods.imageUrl : ""  %> " />
+                        </div>
+                    </div>
+
+                    <div class="form-single-column-flex-row">
+                        <div class="form-row">
+                            <label class="form-label" for="price">Price</label>
+                            <input type="number" name="price" id="price" class="form-input" value="<%= editing ?
+                                prods.price:"" %>" />
+                        </div>
+                    </div>
+
+                    <div class="form-single-column-flex-row">
+                        <div class="form-row">
+                            <label class="form-label" for="description">Description</label>
+                            <textarea name="description" rows="5"
+                                class="form-input"><%= editing ? prods.description : ""  %></textarea>
+                        </div>
+                    </div>
+
+                    <div class="flex form-single-column-flex-row">
+                        <button type="submit" class="form-btn-primary">
+                            <% if (editing) { %>
+                                Update product
+                                <% } else { %>
+                                    Add Product
+                                    <% }%>
+                        </button>
+                    </div>
+
+                    <div class="flex form-single-column-flex-row">
+                        <button type="cancel" class="form-btn-secondary">
+                            Cancel
+                        </button>
+                    </div>
+                </div>
+            </form>
+            <%- include('../includes/end.ejs') %>

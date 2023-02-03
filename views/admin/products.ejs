@@ -11,8 +11,7 @@
                                 <div class="py-4">
                                     <div
                                         class="flex flex-col bg-white border rounded-lg shadow-md hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
-                                        <img class="object-cover rounded-t-lg h-32 md:h-auto sm:w-auto md:w-48 md:rounded-none md:rounded-l-lg"
-                                            src="<%= product.imageUrl %>" alt="" />
+                                        <img class="form-card-image" src="<%= product.imageUrl %>" alt="" />
                                         <div class="flex flex-col p-4">
                                             <h5 class="form-label decoration-4">
                                                 <%= product.title %>
@@ -32,7 +31,8 @@
                                                 </button>
                                             </form>
 
-                                            <a href="/admin/edit-product" class="form-action-btn-secondary">
+                                            <a href="/admin/edit-product/<%= product.id %>?edit=true"
+                                                class="form-action-btn-secondary">
                                                 Edit
                                             </a>
                                         </div>
