@@ -2,15 +2,14 @@
     </head>
     <body class="bodyBackground">
         <%- include('../includes/navigation.ejs') %>
-            <form action="/admin/<%= editing ? `edit-product` : `add-product` %>" method="POST"
-                class="flex">
+            <form action="/admin/<%= editing ? `edit-product` : `add-product` %>" method="POST" class="flex">
                 <div class="form-single-column-flex">
 
                     <div class="form-single-column-flex-row">
                         <div class="form-row">
                             <label class="form-label" for="title">Title</label>
                             <input type="text" name="title" class="form-input"
-                                value="<%= editing ? prods.title : ""%>"/>
+                                value="<%= editing ? prods.title : ""%>" />
                         </div>
                     </div>
 
@@ -18,7 +17,7 @@
                         <div class="form-row">
                             <label class="form-label" for="imageUrl">Image URL</label>
                             <input type="text" name="imageUrl" class="form-input"
-                                value="<%= editing ? prods.imageUrl : ""%>"/>
+                                value="<%= editing ? prods.imageUrl : ""%>" />
                         </div>
                     </div>
 
@@ -46,7 +45,7 @@
                                     Add Product
                                     <% }%>
                         </button>
-                        <input type="hidden" name="productId" value="<%= prods.id%>">
+                        <input type="hidden" name="productId" value="<%= editing ? prods.id : ""%>">
                     </div>
 
                     <div class="flex form-single-column-flex-row">
