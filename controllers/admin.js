@@ -25,7 +25,7 @@ exports.postEditProduct = (req, res, next) => {
   //? this is how we read query params
   //? res.query.key
   const isEditing = req.query.edit;
-  const productId = req.params.productId;
+  const productId = req.body.productId;
   const product = new Product(
     req.body.title,
     req.body.imageUrl,
