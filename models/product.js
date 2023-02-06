@@ -45,6 +45,16 @@ module.exports = class Product {
     });
   }
 
+  static deleteProductById(id) {
+    getProductsFromFile((products) => {
+      const updatedProducts = products.filter((p) => p.id !== id);
+      // ! Must use an arrow function here, otherwise this will not refer to the class scope, instead it will refer to the function context.
+      fs.writeFile(filePath, JSON.stringify(updatedProducts), (err) => {
+        console.log("err :>> ", err);
+      });
+    });
+  }
+
   static fetchAll(cb) {
     getProductsFromFile(cb);
   }
