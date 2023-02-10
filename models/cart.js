@@ -24,6 +24,10 @@ const saveCart = (cart, cb) => {
 };
 
 module.exports = class Cart {
+  static getCart(cb) {
+    getCartProductsFromFile(cb);
+  }
+
   static addProduct(productId, productPrice, cb) {
     getCartProductsFromFile((cart) => {
       const existingProductIndex = cart.products.findIndex(
@@ -39,6 +43,23 @@ module.exports = class Cart {
       cart.products.push({ id: productId, quantity: 1 });
       cart.totalPrice = parseFloat(cart.totalPrice) + parseFloat(productPrice);
       saveCart(cart, () => cb(cart));
+    });
+  }
+
+  static deleteProductFromCartWith(productId, price, cb) {
+    getCartProductsFromFile((cart) => {
+      const existingProductIndex = cart.products.findIndex(
+        (product) => product.id === productId
+      );
+      if (existingProductIndex >= 0) {
+        const quantity = cart.products[existingProductIndex].quantity;
+        cart.totalPrice =
+          parseFloat(cart.totalPrice) - quantity * parseFloat(price);
+        const updatedProducts = cart.products.filter((p) => p.id !== productId);
+        const updatedCart = { ...cart };
+        updatedCart.products = updatedProducts;
+        return saveCart(updatedCart, () => cb(cart));
+      }
     });
   }
 };

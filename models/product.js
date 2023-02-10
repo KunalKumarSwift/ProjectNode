@@ -1,6 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 const rootDir = require("../utils/path");
+const Cart = require("../models/cart");
 const products = [];
 const filePath = path.join(rootDir, "..", "..", "data", "products.json");
 
@@ -47,10 +48,14 @@ module.exports = class Product {
 
   static deleteProductById(id) {
     getProductsFromFile((products) => {
+      const product = products.find((p) => p.id === id);
       const updatedProducts = products.filter((p) => p.id !== id);
       // ! Must use an arrow function here, otherwise this will not refer to the class scope, instead it will refer to the function context.
       fs.writeFile(filePath, JSON.stringify(updatedProducts), (err) => {
         console.log("err :>> ", err);
+      });
+      Cart.deleteProductFromCartWith(id, product.price, (cart) => {
+        console.log("cart :>> ", cart);
       });
     });
   }

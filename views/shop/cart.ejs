@@ -2,5 +2,45 @@
     </head>
     <body class="bodyBackground">
         <%- include('../includes/navigation.ejs')%>
-            <h1>Cart</h1>
-            <%- include('../includes/end.ejs')%>
+            <div class="form-single-column-flex">
+                <div class="form-single-column-flex-row">
+                    <div class="form-elements-background rounded-lg">
+                        <% if (cart.products.length==0) { %>
+                            <div
+                                class="flex justify-center animate-bounce font-latoThinItalic font-extrabold rounded-lg p-32 text-gray-50 sm:text-xs text-2xl">
+                                <div>Cart Empty</div>
+                            </div>
+                            <% } else { %>
+                                <div class="grid grid-cols-10 gap-0 items-center">
+                                    <div class="table-header rounded-tl-lg col-span-2">Image</div>
+                                    <div class="table-header col-span-1">Price</div>
+                                    <div class="table-header col-span-5 sm:col-span-4">Description</div>
+                                    <div class="table-header col-span-1 sm:col-span-2">Quantity</div>
+                                    <div class="table-header rounded-tr-lg col-span-1">Edit</div>
+                                    <% for( let product of cart.products ) { %>
+                                        <img src="<%=product.imageUrl%>"
+                                            class="col-span-2 h-32 w-full object-cover"></img>
+                                        <div class="col-span-1 text-center table-row">$<%=product.price%>
+                                        </div>
+                                        <div class="col-span-5 sm:col-span-4 line-clamp-4 table-row">
+                                            <%=product.description%>
+                                        </div>
+                                        <div class="col-span-1 sm:col-span-2 text-center table-row ">
+                                            <%=product.quantity%>
+                                        </div>
+                                        <div class="col-span-1 table-row justify-center">
+                                            <form method="post" action="/delete-cart-item">
+                                                <button type="submit" class="form-action-btn-primary">Delete</button>
+                                                <input type="hidden" name="productId" value="<%= product.id%>">
+                                            </form>
+                                        </div>
+                                        <div class="col-span-10 h-1 bg-sky-500 opacity-20"></div>
+                                        <% }%>
+                                </div>
+                                <div
+                                    class="flex flex-row-reverse font-cascadiaRegular rounded-b-lg p-2 text-white bg-sky-700 sm:text-xs text-lg">
+                                    <div>Total: $<%= Number(cart.totalPrice) %>
+                                    </div>
+                                </div>
+                                <% } %>
+                                    <%- include('../includes/end.ejs')%>

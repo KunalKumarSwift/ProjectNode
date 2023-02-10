@@ -37,6 +37,8 @@ module.exports = {
         latoRegular: ["LatoRegular"],
         latoThin: ["LatoThin"],
         latoThinItalic: ["LatoThinItalic"],
+        cascadiaRegular: ["CascadiaRegular"],
+        cascadiaItalic: ["CascadiaItalic"],
       },
     },
   },

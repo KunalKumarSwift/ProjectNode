@@ -4,7 +4,7 @@
 
 @layer components {
   .nav-menu-item {
-    @apply text-sm sm:text-xs sm:p-2 p-4 rounded-lg bg-sky-800 text-purple-300;
+    @apply text-sm sm:text-xs sm:p-2 p-4 rounded-lg bg-sky-800 text-purple-300 hover:bg-sky-500;
   }
 
   .nav-menu-item.active {
@@ -75,6 +75,14 @@
   .form-action-btn-secondary {
     @apply form-btn-secondary font-latoBold flex-grow-0 p-2 text-xs h-8;
   }
+
+  .table-header {
+    @apply bg-sky-700 font-cascadiaItalic p-2 col-span-1 text-center text-white sm:text-xs text-lg tracking-wide capitalize;
+  }
+
+  .table-row {
+    @apply form-label-description font-latoRegular sm:text-xs text-lg;
+  }
 }
 
 @font-face {
@@ -125,4 +133,14 @@
 @font-face {
   font-family: "LatoThinItalic";
   src: url("../fonts/Lato/Lato-ThinItalic.ttf");
+}
+
+@font-face {
+  font-family: "CascadiaRegular";
+  src: url("../fonts/Cascadia/CascadiaCode.ttf");
+}
+
+@font-face {
+  font-family: "CascadiaItalic";
+  src: url("../fonts/Cascadia/CascadiaCodeItalic.ttf");
 }
